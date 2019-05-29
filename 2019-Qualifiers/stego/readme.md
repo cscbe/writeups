@@ -1,11 +1,12 @@
-#Digital Brussels
+## Digital Brussels
 
-## Description
+### Description
 
-The city of Brussels discovered leaks and breaches in their system. The attackers used some advanced exfiltration methods to send data over large distances..Apparently the data is hidden in the following picture..
-Are you able to retrieve it for us?
+> The city of Brussels discovered leaks and breaches in their system. The attackers used some advanced exfiltration methods to send data over large distances..Apparently the data is hidden in the following picture..
+> 
+> Are you able to retrieve it for us?
 
-## Solution
+### Solution
 
 Translate the lights of the big building to binary:
 
@@ -18,10 +19,10 @@ Translate the lights of the big building to binary:
 
 Translate the binary to ascii to get the flag.
 
-##Flag
+### Flag
 `csc{y0u_W1n}`
 
 
-##Creator
+### Creator
 Edouard Piron 
 

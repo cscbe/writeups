@@ -1,13 +1,13 @@
-#Privacy Q&A
+## Privacy Q&A
 
-## Description
+### Description
 
-OSINT type privacy themed Question - Answer challenges
+> OSINT type privacy themed Question - Answer challenges
+> 
+> The answers are the flag with some googling the teams should be able to find it.
 
-The answers are the flag with some googling the teams should be able to find it.
 
-
-## Solution
+### Solution
 
 
 #### Question 1
@@ -36,9 +36,9 @@ Who presented about the state of personal privacy as of 2018 in that year's edit
 Answer: Kirils Solovjovs
 
 
-##Flag
+### Flag
 /
 
-##Creator
+### Creator
 Dieter Castel
 

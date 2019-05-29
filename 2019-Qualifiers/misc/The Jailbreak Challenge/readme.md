@@ -1,27 +1,27 @@
-#The Jailbreak Challenge
+## The Jailbreak Challenge
 
-## Description
-
-
-### Challenge 1 
-Wake up, NEO. The matrix has you. Follow the White Rabbit. Recover the flag: *link to 5_T1m3s.zip_*
+### Description
 
 
-### Challenge 2
-
-This is your last chance. After this, there is no turning back. You take the blue pill - the story ends, you wake up in your bed and believe whatever you want to believe. You take the red pill - you stay in Wonderland and I show you how deep the rabbit-hole goes.
-Note: this is the follow-up challenge of The Jail Break Challenge #1
+#### Challenge 1 
+> Wake up, NEO. The matrix has you. Follow the White Rabbit. Recover the flag: *link to 5_T1m3s.zip_*
 
 
-### Challenge 3
+#### Challenge 2
 
-I know what you're thinking, 'cause right now I'm thinking the same thing. Actually, I've been thinking it ever since I got here: Why oh why didn't I take the BLUE pill?
-Note: this is the follow-up challenge of The Jail Break Challenge #2
+> This is your last chance. After this, there is no turning back. You take the blue pill - the story ends, you wake up in your bed and believe whatever you want to believe. You take the red pill - you stay in Wonderland and I show you how deep the rabbit-hole goes.
+> Note: this is the follow-up challenge of The Jail Break Challenge #1
 
 
-## Solution
+#### Challenge 3
 
-### Challenge 1 
+> I know what you're thinking, 'cause right now I'm thinking the same thing. Actually, I've been thinking it ever since I got here: Why oh why didn't I take the BLUE pill?
+> Note: this is the follow-up challenge of The Jail Break Challenge #2
+
+
+### Solution
+
+#### Challenge 1 
 
 We received a zip file named: 5_T1m3s.zip The zip file is encrypted, but the filename gives a hint about the password:
   * 5 characters
@@ -37,7 +37,7 @@ Once unzipped, we have 4 new files:
 We've got the first flag: CSC{f0b487b82fee5b144808cad2e33f2898}
 
 
-### Challenge 2
+#### Challenge 2
 
 The pdf file contains an interesting description in his metadata: `Mozart is not a walking dead`
 
@@ -70,7 +70,7 @@ Zip Password
 Keep going you are ready for the next stage
 ```
 
-### Challenge 3
+#### Challenge 3
 
 We can then decrypt the file not_yet.zip. Once decrypted, we get a new zip file: nca408qdnxkf.zip
 This time, we have a recursive zip file with random names, we have to write an extraction script that will remove the top level zip after each decryption. If not removed, the recursive decryption will take around 2Tb !!! (takes around 15min to decrypt)
@@ -89,11 +89,11 @@ CSC{f50b4134df869b49761cb4b38df744d0}
 ```
 
 
-##Flag
-  * `CSC{f0b487b82fee5b144808cad2e33f2898}
+### Flag
+  * `CSC{f0b487b82fee5b144808cad2e33f2898}`
   * `CSC{47d9a3dffa147610f62e23ca78f5a8f7}`
   * `CSC{f50b4134df869b49761cb4b38df744d0}`
 
 
-##Creator
+### Creator
 Dimitri Diakodimitris (https://www.linkedin.com/in/dimitridiakodimitris/)
