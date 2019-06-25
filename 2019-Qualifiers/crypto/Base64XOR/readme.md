@@ -1,11 +1,14 @@
-# Challenge
-I found a way to thwart people breaking xor encryption! Instead of base64 encoding the encrypted message, I'll first encode the message before encrypting it. No more frequency analysis! Anyway, here is the method I used, It's so simple I'm surprised nobody thought about it before. Unbreakable!
-`base64 -w 0 message.txt | xortool-xor -s <notthekey> -f - > message.enc`
+## Base64 + xor = <3
 
+### Description
 
-# Solution
+> I found a way to thwart people breaking xor encryption! Instead of base64 encoding the encrypted message, I'll first encode the message before encrypting it. No more frequency analysis!
+> Anyway, here is the method I used, It's so simple I'm surprised nobody thought about it before. Unbreakable!
+> `base64 -w 0 message.txt | xortool-xor -s <notthekey> -f - > message.enc`
 
-solution.py
+### Solution
+
+Get the key back using the following script:
 
 ```
 #!/usr/bin/env python3
@@ -58,14 +61,10 @@ for i in range(3, 35):
 
 ```
 
+Use the key to xor the encrypted message:
+
 ```
-base64 -w 0 message.txt | xortool-xor -s FzUvdewPTN8gkahU4Vs2Pwd -f - > message.enc
-
-# get key back from this
-python3 solution.py message.enc
-
 xortool-xor -s FzUvdewPTN8gkahU4Vs2Pwd -f message.enc | base64 -d > message_decrypted.txt
-
 ```
 
 Output:
@@ -99,3 +98,12 @@ Flag: CSC{I_w0nd3r_how_DEFLATE_wouId_do}
 *** START OF THIS PROJECT GUTENBERG EBOOK MOBY DICK; OR THE WHALE ***
 
 ```
+
+
+### Flag
+`CSC{I_w0nd3r_how_DEFLATE_wouId_do}`
+
+
+### Creator
+Thomas De Backer
+
