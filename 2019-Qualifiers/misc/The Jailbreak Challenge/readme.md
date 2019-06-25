@@ -64,7 +64,9 @@ The result of the decryption:
 
 ```
 Second Flag
------------ CSC{47d9a3dffa147610f62e23ca78f5a8f7}
+----------- 
+CSC{47d9a3dffa147610f62e23ca78f5a8f7}
+
 Zip Password
 ------------
 Keep going you are ready for the next stage
