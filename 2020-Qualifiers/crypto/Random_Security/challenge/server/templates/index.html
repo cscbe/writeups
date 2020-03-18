@@ -1,0 +1,40 @@
+<!doctype html>
+<title>Random Security - {{ RS_SERVER }}</title>
+<style>
+  html, body {
+    padding: 0;
+    margin: 0;
+  }
+  .content {
+    max-width: 800px;
+    padding: 0 10px;
+    margin: auto;
+  }
+  .content .api-overview dt {
+    margin-top: 2em;
+    font-family: monospace;
+    color: #666;
+    width: 100%;
+    display: inline-block;
+  }
+</style>
+<div class="content">
+  <h1>Random Security - {{ RS_SERVER }}</h1>
+
+  <p>
+    Welcome on one of the servers of Random Security. To interact with this server you can use the API. For some
+    features you will have to provide your security key.
+  </p>
+  <dl class="api-overview">
+    <dt>/api/help</dt>
+    <dd>Display this help page.</dd>
+    <dt>/api/get_time</dt>
+    <dd>Display the current time of the server.</dd>
+    <dt>/api/last_accessed_server</dt>
+    <dd> Display the server name of which the secret was most recently accessed.</dd>
+    <dt>/api/last_access?key=&lt;key&gt;</dt>
+    <dd> Display the last time the secret on this server was accessed.</dd>
+    <dt>/api/get_secret?key=&lt;key&gt;</dt>
+    <dd>Display the sectret of this server.</dd>
+  </dl>
+</div>

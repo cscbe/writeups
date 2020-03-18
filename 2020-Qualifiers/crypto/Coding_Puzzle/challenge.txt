@@ -1,0 +1,16 @@
+# Coding Puzzle
+
+## Challenge created by Wouter Coudenys
+
+## Description
+Can you break this custom encryption?
+
+MTcxMWJmOTU5YTBjZGQwNzMwYTNhOWU1ZWQwYzY3YzJ9TTI1MjcwMVBNME01ME0wUVFQMjBMODczNzhONU84UTR7TkROZTU3ZTYzNmE5Nzk2NDUzNjJjOTZlMzJlZWFjNTg5NTE
+
+## Solution
+
+The flag is encoded/encrypted multiple times. This challenge can most easily be solved using [CyberChef](https://gchq.github.io/CyberChef/). You can use the 'magic' recipe to help you go in the right direction. The order of operations is:
+
+- Base64 decode
+- Rot 15
+- Reverse string

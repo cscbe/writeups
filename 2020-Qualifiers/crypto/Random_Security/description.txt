@@ -1,0 +1,2 @@
+<p>You are currently performing a pentest at Random Security. One of your colleagues found two interl web servers, Tweedledum (52.51.94.193:4321) and Tweedledee (52.51.94.193:4322), which seem to be communicating with each other.
+Your colleague also managed to get a tcpdump running on the communication between the two servers (nc 52.51.94.193 4323 > dump.pcap), but he couldn't get any secrets out of it. Can you help?</p>

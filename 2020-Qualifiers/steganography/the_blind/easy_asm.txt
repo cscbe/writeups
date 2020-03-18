@@ -1,0 +1,36 @@
+ push 0
+ push 125
+ push 100
+ push 110
+ push 49
+ push 108
+ push 98
+ push 95
+ push 121
+ push 108
+ push 51
+ push 116
+ push 51
+ push 108
+ push 112
+ push 109
+ push 48
+ push 99
+ push 95
+ push 77
+ push 97
+ push 95
+ push 49
+ push 123
+ push 67
+ push 83
+ push 67
+
+label_0:
+ dup
+ jz label_1
+ printc
+ jmp label_0
+
+label_1:
+ end

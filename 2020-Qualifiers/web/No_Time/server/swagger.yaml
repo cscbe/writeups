@@ -1,0 +1,85 @@
+openapi: 3.0.1
+info:
+  title: no_time_challenge
+  description: i have no time
+  version: '0.1'
+servers:
+  - url: 'server'
+paths:
+  /login:
+    post:
+      description: login to get the flag
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pin:
+                  type: string
+            examples:
+              'correct pin length':
+                value: |-
+                  {
+                      "pin": "000000000000"
+                  }
+              'wrong pin length':
+                value: |-
+                  {
+                      "pin": "00000000000"
+                  }
+      responses:
+        '200':
+          description: pin entered in right format
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+              examples:
+                'wrong pin':
+                  value: |
+                    {
+                      "message": "wrong pin"
+                    }
+        '400':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+              examples:
+                'wrong pin length':
+                  value: |
+                    {
+                      "message": "pin length is not correct"
+                    }
+                'value is not of type String':
+                  value: |
+                    {
+                      "message": "pin should be of type String"
+                    }
+      servers:
+        - url: 'server'
+    servers:
+      - url: 'server'
+  /:
+    get:
+      description: dont need this
+      responses:
+        '200':
+          description: you have time to read this?
+          content:
+            text/html; charset=utf-8:
+              schema:
+                type: string
+              examples: {}
+      servers:
+        - url: 'server'
+    servers:
+      - url: 'server'

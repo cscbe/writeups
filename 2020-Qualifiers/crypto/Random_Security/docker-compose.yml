@@ -1,0 +1,44 @@
+version: "3"
+services:
+  tweedledum:
+    container_name: tweedledum
+    build: ./server
+    ports:
+      - ${RS_1_PORT}:443
+    volumes:
+      - ./keys/key1.cert.pem:/app/key.cert.pem
+      - ./keys/key1.private.pem:/app/key.private.pem
+    networks:
+      - wonderland
+    environment:
+      RS_THIS_KEY: ${RS_1_KEY}
+      RS_THIS_NAME: "Tweedledum"
+      RS_THIS_SECRET: ${RS_1_SECRET}
+      RS_OTHER_KEY: ${RS_2_KEY}
+      RS_OTHER_NAME: "Tweedledee"
+      RS_OTHER_LOCATION: "tweedledee:443"
+  tweedledee:
+    container_name: tweedledee
+    build: ./server
+    ports:
+      - ${RS_2_PORT}:443
+      - ${RS_ALICE_PORT}:80
+    volumes:
+      - ./keys/key2.cert.pem:/app/key.cert.pem
+      - ./keys/key2.private.pem:/app/key.private.pem
+    networks:
+      - wonderland
+    environment:
+      RS_THIS_KEY: ${RS_2_KEY}
+      RS_THIS_NAME: "Tweedledee"
+      RS_THIS_SECRET: ${RS_2_SECRET}
+      RS_OTHER_KEY: ${RS_1_KEY}
+      RS_OTHER_NAME: "Tweedledum"
+      RS_OTHER_LOCATION: "tweedledum:443"
+  alice:
+    depends_on: 
+      - tweedledee
+    network_mode: service:tweedledee
+    build: ./tcpdump
+networks:
+  wonderland:
