@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+  web:
+    build: .
+    command: /wait-for-it.sh db:5432 -- bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./application/:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  xss:
+    environment:
+      - BASE_URL=http://web:8000/
+      - FLAG=CSCBE{So_you_are_telling_me_I_should_sanitize_user_controlled_url_protocols}
+      - ADMIN_PASSWORD=WB1s0Fs3V0IXYTRJrDV3TSqq8js6rqlKMYlR8CKHllo3PXhfIzk
+    build: .
+    command: /wait-for-it.sh web:80 -- bash -c "python manage.py create_admin && python manage.py run_xss_judge"
+    volumes:
+      - ./application/:/code
+    depends_on:
+      - db
+      - web

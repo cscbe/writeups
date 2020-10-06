@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Tweet from <a href="{% url 'tweets:profile' tweet.user.username %}">{{ tweet.user.username }}</a></h2>
+<div class="card my-4">
+    <div class="card-body">
+        <p>
+            {{ tweet.text }}
+        </p>
+        {% if tweet.link %}
+        <a href="{{ tweet.link }}" id="tweet-link" class="btn btn-primary">{{ tweet.link_text }}</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Tweets for user {{ profile.username }}</h2>
+{% if user == profile %}
+<a href="{% url 'tweets:new' %}">Add tweet</a>
+{% endif %}
+{% for tweet in profile.tweet_set.all %}
+<div class="card my-4">
+    <div class="card-body">
+        <p>
+            {{ tweet.text }}
+        </p>
+        {% if tweet.link %}
+        <a href="{{ tweet.link }}" class="btn btn-primary">{{ tweet.link_text }}</a>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
