@@ -1,6 +1,7 @@
 # HydroPump
 
 Challenge Author: Jeroen Beckers
+
 Source files: https://s3-eu-west-1.amazonaws.com/be.cscbe.challenges.2021/hydropump_82b546c789623b051f0bd38df94c54a0/hydro.tar
 
 # Writeup
@@ -299,6 +300,8 @@ Size too large for /app/private/firmware_updates/606453aba69b8-20210331104915/ra
 8. And finally include the file using the LFI, no need for the PHP filter anymore
 
 ```
+REQUEST 
+
 GET /index.php/state/show HTTP/1.1
 Host: localhost:9999
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
@@ -311,7 +314,8 @@ Upgrade-Insecure-Requests: 1
 Cache-Control: max-age=0
 
 				
-            
+RESPONSE
+
           </div><!--/.nav-collapse -->
         </div>
       </div>
