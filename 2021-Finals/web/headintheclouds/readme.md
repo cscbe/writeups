@@ -9,7 +9,7 @@ Challenge files: https://s3-eu-west-1.amazonaws.com/be.cscbe.challenges.2021/hea
 
 1.	Browsing directly to the Flag URL yields Access Denied:
 
-![writeup](/img/Picture1.png)
+![writeup](.//img/Picture1.png)
 
 
 2.	By investigating the Docker container, we can see the web application is an instance of the Responsive Filemanager version 9.13.1:
