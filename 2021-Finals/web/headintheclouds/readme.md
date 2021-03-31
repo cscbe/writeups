@@ -9,48 +9,48 @@ Challenge files: https://s3-eu-west-1.amazonaws.com/be.cscbe.challenges.2021/hea
 
 1.	Browsing directly to the Flag URL yields Access Denied:
 
-![writeup](.//img/Picture1.png)
+![writeup](./img/Picture1.png)
 
 
 2.	By investigating the Docker container, we can see the web application is an instance of the Responsive Filemanager version 9.13.1:
 
-![writeup](/img/Picture2.png)
+![writeup](./img/Picture2.png)
 
  
 3.	Some googling highlights a Server-Side Request Forgery & Local File Inclusion vulnerability in this exact version: https://www.exploit-db.com/exploits/45103 . This is clearly a vulnerability in the Upload section. Notice that this PoC also references metadata URL http://169.254.169.254/openstack: 
 
- ![writeup](/img/Picture13.png)
+ ![writeup](./img/Picture13.png)
 
 4.	Visiting the hosted web application, we can effectively enter URL file:///etc/passwd and hereafter download this file from the dashboard. However, this isn’t helpful for the challenge, as the flag is not hosted in the Docker container but on an external AWS S3 bucket:
 
 
  
-![writeup](/img/Picture3.png)
-![writeup](/img/Picture4.png)
+![writeup](./img/Picture3.png)
+![writeup](./img/Picture4.png)
  
 
  
 5.	Entering the flag’s URL unfortunately results in Access Denied:
   
 
-![writeup](/img/Picture5.png)
-![writeup](/img/Picture6.png)
+![writeup](./img/Picture5.png)
+![writeup](./img/Picture6.png)
  
 6.	However, since the Docker is also hosted on AWS, the AWS Metadata endpoint at http://169.254.169.254/latest/meta-data/iam/security-credentials/ is also reachable. After entering this URL, we indeed get a JSON file back mentioning role “cscbe2020challengearneswinnen”:
 
-![writeup](/img/Picture7.png)
-![writeup](/img/Picture8.png)
+![writeup](./img/Picture7.png)
+![writeup](./img/Picture8.png)
 
  
 7.	Requesting file http://169.254.169.254/latest/meta-data/iam/security-credentials/cscbe2020challengearneswinnen yields temporary AWS credentials:
 
-![writeup](/img/Picture9.png)
-![writeup](/img/Picture10.png) 
+![writeup](./img/Picture9.png)
+![writeup](./img/Picture10.png) 
 
  
 8.	By using these temporary credentials in the correct manner, we can now copy the flag.txt file from the target S3 bucket to our own machine with the AWS CLI and read out the flag:
 
-![writeup](/img/Picture11.png)
+![writeup](./img/Picture11.png)
 
 ```
 # export AWS_ACCESS_KEY_ID=XXX
