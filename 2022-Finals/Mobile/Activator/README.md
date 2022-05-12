@@ -60,7 +60,7 @@ class _MyHomePageState@17046945 extends State {
 ```
 Based on the resources listed at the start of this page, we know that the functions we see here are wrappers around the actual implementation. This means that in order to find the implementation of _getActivationKey, we have to look at `0x134fbc` and not `0x17046945`.
 
-While you could open the binary in Ghidra and look for interesting code, it's much easier to solve this challenge dynamically. (In fact, I'm pretty sure it's very difficult to solve this statically)
+While you could open the binary in Ghidra and look for interesting code, it's much easier to solve this challenge dynamically.
 
 By using Frida (https://frida.re) we can hook the function _getActivationKey and figure out what it return:
 
